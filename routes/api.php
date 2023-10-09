@@ -33,10 +33,10 @@ Route::post('image/upload', [UploadController::class, 'uploadImage'])
     ->middleware('auth:sanctum');
 Route::post('image/upload-multiple', [UploadController::class, 'uploadMultipleImage'])
     ->middleware('auth:sanctum');
-// Route::post('orders', [OrderController::class, 'order'])
-//     ->middleware('auth:sanctum');
+Route::post('orders', [OrderController::class, 'order'])
+    ->middleware('auth:sanctum');
 
-// Route::post('midtrans/notification/handling', [CallbackController::class, 'callback']);
+Route::post('midtrans/notification/handling', [CallbackController::class, 'callback']);
 
 Route::apiResource('categories', CategoryController::class);
 Route::apiResource('products', ProductController::class);
