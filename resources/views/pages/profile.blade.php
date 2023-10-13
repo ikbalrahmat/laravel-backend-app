@@ -4,10 +4,8 @@
 
 @push('style')
     <!-- CSS Libraries -->
-    <link rel="stylesheet"
-        href="{{ asset('library/summernote/dist/summernote-bs4.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('library/bootstrap-social/assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/summernote/dist/summernote-bs4.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/bootstrap-social/assets/css/bootstrap.css') }}">
 @endpush
 
 @section('main')
@@ -30,8 +28,7 @@
                     <div class="col-12 col-md-12 col-lg-5">
                         <div class="card profile-widget">
                             <div class="profile-widget-header">
-                                <img alt="image"
-                                    src="{{ asset('img/avatar/avatar-1.png') }}"
+                                <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}"
                                     class="rounded-circle profile-widget-picture">
                                 <div class="profile-widget-items">
                                     <div class="profile-widget-item">
@@ -109,8 +106,7 @@
                     <div class="col-12 col-md-12 col-lg-7">
                         <div class="card">
                             <form method="post" action="{{ route('user-profile-information.update') }}"
-                                class="needs-validation"
-                                novalidate="">
+                                class="needs-validation" novalidate="">
                                 @csrf
                                 @method('PUT')
                                 <div class="card-header">
@@ -123,27 +119,26 @@
                                             <input type="text"
                                                 class="form-control @error('name', 'updateProfileInformation')
                                                     is-invalid
-                                                @enderror" name="name"
-                                                value="{{ auth()->user()->name }}">
-                                                @error('name', 'updateProfileInformation')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
+                                                @enderror"
+                                                name="name" value="{{ auth()->user()->name }}">
+                                            @error('name', 'updateProfileInformation')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-md-6 col-12">
                                             <label>Email</label>
                                             <input type="email"
                                                 class="form-control @error('email', 'updateProfileInformation')
                                                 is-invalid
-                                                @enderror" name="email"
-                                                value="{{ auth()->user()->email }}"
-                                                required="">
-                                                @error('email', 'updateProfileInformation')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
+                                                @enderror"
+                                                name="email" value="{{ auth()->user()->email }}" required="">
+                                            @error('email', 'updateProfileInformation')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="row">
@@ -153,12 +148,13 @@
                                             <input type="tel"
                                                 class="form-control @error('phone', 'updateProfileInformation')
                                                 is-invalid
-                                                @enderror"value="{{ auth()->user()->phone }}" name="phone">
-                                                @error('phone', 'updateProfileInformation')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
+                                                @enderror"value="{{ auth()->user()->phone }}"
+                                                name="phone">
+                                            @error('phone', 'updateProfileInformation')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="row">
